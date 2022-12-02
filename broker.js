@@ -1,4 +1,4 @@
-const https = require('https');
+const https = require('http');
 const fs = require('fs');
 var StompServer = require('stomp-broker-js');
 
@@ -17,7 +17,7 @@ var stompServer = new StompServer({
   }
 });
 
-server.listen(61614, "0.0.0.0");
+server.listen(6161, "localhost");
 
 stompServer.subscribe("/**", function(msg, headers) {
   var topic = headers.destination;
